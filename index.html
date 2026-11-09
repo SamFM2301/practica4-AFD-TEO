@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PR04 - AFD Programación</title>
     <link rel="stylesheet" href="styles.css" />
-
-    <script type="module" src="script.js"></script>
   </head>
   <body>
     <header class="encabezado">
@@ -70,28 +68,8 @@ Finalmente, el porcentaje de satisfacción de los empleados ha mejorado al 89.7%
           </table>
         </div>
 
-        <div class="resumen">
-          <div class="tarjeta">
-            <span class="tarjeta-numero" id="total-cadenas">0</span>
-            <span class="tarjeta-texto">Cadenas validas</span>
-          </div>
-          <div class="tarjeta">
-            <span class="tarjeta-numero" id="total-naturales">0</span>
-            <span class="tarjeta-texto">Naturales</span>
-          </div>
-          <div class="tarjeta">
-            <span class="tarjeta-numero" id="total-reales">0</span>
-            <span class="tarjeta-texto">Reales</span>
-          </div>
-          <div class="tarjeta">
-            <span class="tarjeta-numero" id="total-porcentajes">0</span>
-            <span class="tarjeta-texto">Porcentajes</span>
-          </div>
-          <div class="tarjeta">
-            <span class="tarjeta-numero" id="total-monetarios">0</span>
-            <span class="tarjeta-texto">Valores monetarios</span>
-          </div>
-        </div>
+        <!-- El JS genera una tarjeta por cada tipo de estado de aceptacion -->
+        <div class="resumen" id="resumen"></div>
       </section>
 
       <!-- ===================== MODULO DE RESULTADOS ===================== -->

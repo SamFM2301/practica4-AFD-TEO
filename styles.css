@@ -195,6 +195,10 @@ body {
   color: #15803d;
   font-weight: bold;
 }
+.tipo-entero {
+  color: #be123c;
+  font-weight: bold;
+}
 
 .mensaje-vacio {
   margin-top: 12px;
