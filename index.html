@@ -8,40 +8,33 @@
   </head>
   <body>
     <header class="encabezado">
-      <h1>Práctica 4: AFD Programacion</h1>
+      <h1>Práctica 4: AFD Programación</h1>
       <p>
-        Identificacion de cadenas numericas en un texto mediante un Automata
+        Identificación de cadenas numéricas en un texto mediante un Autómata
         Finito Determinista
       </p>
     </header>
 
     <main class="contenedor">
-      <!-- ===================== MODULO DE ENTRADA ===================== -->
+      <!-- Módulo de entrada -->
       <section class="modulo" id="modulo-entrada">
-        <h2>1. Modulo de entrada</h2>
+        <h2>1. Módulo de entrada</h2>
         <p class="ayuda">
-          Escribe o pega el texto a analizar. Cada salto de linea cuenta como
-          una linea nueva.
+          Escribe o pega el texto a analizar. Cada salto de línea (Enter) cuenta
+          como una línea nueva; los números de la izquierda son los que aparecen
+          en la columna «No. Línea» de los resultados.
         </p>
 
-        <textarea id="texto-entrada" rows="16" wrap="off" spellcheck="false">
-En el último trimestre del año 2024, la empresa reportó ingresos por 5,000,000.50 dólares,
-lo que representa un aumento del 7.8% en comparación con el mismo período del año anterior.
-El número de productos vendidos alcanzó los 120,000, con un promedio de 500 unidades por día.
-La tasa de retorno de inversión fue del 15.2%, superando las expectativas iniciales del 10%.
-Además, se estableció una meta de crecimiento del 20% para el próximo año,
-proyectando ventas de más de 6 millones de unidades. Los costos operativos aumentaron un 3.5%,
-pero el margen de ganancias sigue siendo saludable, con un 25%.
-En cuanto a la eficiencia energética, la planta redujo el consumo de electricidad en un 12.4%,
-lo que se traduce en un ahorro de aproximadamente $150,000 anuales.
-En el departamento de marketing, el presupuesto se incrementó en un 8%, alcanzando los $1,200,000
-para cubrir campañas internacionales. La empresa también planea abrir 10 nuevas tiendas, lo que generará alrededor de 500 empleos.
-La duración promedio de los proyectos fue de 8.5 meses,
-lo que demuestra un considerable avance en la optimización de los procesos.
-Los números de atención al cliente mostraron una mejora del 4.3%, con más de 95,000 consultas resueltas.
-En el último mes, el precio de las acciones subió un 2.5%, alcanzando un valor de $75.25 por acción.
-Finalmente, el porcentaje de satisfacción de los empleados ha mejorado al 89.7%, un reflejo del esfuerzo por mantener un entorno laboral saludable.</textarea
-        >
+        <div class="editor">
+          <div class="editor-lineas" id="numeros-linea" aria-hidden="true"></div>
+          <textarea
+            id="texto-entrada"
+            spellcheck="false"
+            aria-label="Texto a analizar"
+            placeholder="Escribe o pega aquí el texto a analizar…"
+          ></textarea>
+        </div>
+        <div class="editor-medidor" id="medidor-lineas" aria-hidden="true"></div>
 
         <div class="botones">
           <button type="button" id="btn-analizar" class="btn btn-principal">
@@ -53,28 +46,30 @@ Finalmente, el porcentaje de satisfacción de los empleados ha mejorado al 89.7%
         </div>
       </section>
 
-      <!-- ===================== MODULO DE ANALISIS ===================== -->
+      <!-- Módulo de análisis -->
       <section class="modulo" id="modulo-analisis">
-        <h2>2. Modulo de analisis</h2>
+        <h2>2. Módulo de análisis</h2>
         <p class="ayuda">
           Tabla de transiciones del AFD usada para validar cada cadena.
         </p>
 
-        <!-- El JS llena esta tabla con los estados y columnas de símbolos -->
         <div class="tabla-scroll">
           <table id="tabla-transiciones" class="tabla">
             <thead id="transiciones-encabezado"></thead>
             <tbody id="transiciones-cuerpo"></tbody>
           </table>
         </div>
+        <p class="leyenda">
+          → estado inicial · * estado de aceptación (fondo verde) · — sin
+          transición (la cadena se desecha)
+        </p>
 
-        <!-- El JS genera una tarjeta por cada tipo de estado de aceptacion -->
         <div class="resumen" id="resumen"></div>
       </section>
 
-      <!-- ===================== MODULO DE RESULTADOS ===================== -->
+      <!-- Módulo de resultados -->
       <section class="modulo" id="modulo-resultados">
-        <h2>3. Modulo de resultados</h2>
+        <h2>3. Módulo de resultados</h2>
 
         <div class="tabla-scroll">
           <table id="tabla-resultados" class="tabla">
@@ -91,13 +86,13 @@ Finalmente, el porcentaje de satisfacción de los empleados ha mejorado al 89.7%
         </div>
 
         <p id="mensaje-vacio" class="mensaje-vacio">
-          Aun no hay resultados. Presiona "Analizar texto".
+          Aún no hay resultados. Presiona «Analizar texto».
         </p>
       </section>
     </main>
 
     <footer class="pie">
-      <p>Teoria de la Computacion · UABCS · AD2026</p>
+      <p>Teoría de la Computación · UABCS</p>
     </footer>
 
     <script src="script.js"></script>
