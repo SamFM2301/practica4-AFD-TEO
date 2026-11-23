@@ -1,0 +1,212 @@
+/* ---- ESTILOS BASE ---- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  color: #000;
+  background: #fff;
+}
+
+.contenedor {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---- ENCABEZADO ---- */
+
+.encabezado {
+  padding: 18px 0;
+  margin-bottom: 22px;
+  border-bottom: 1px solid #000;
+}
+
+.encabezado h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.encabezado p {
+  margin: 4px 0 0;
+  font-size: 14px;
+}
+
+/* ---- DISTRIBUCIÓN ---- */
+
+.columnas {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 18px;
+  align-items: start;
+}
+
+.panel {
+  border: 1px solid #000;
+  border-radius: 6px;
+  padding: 16px 18px;
+  margin-bottom: 18px;
+}
+
+.panel h2 {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+
+.panel-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.panel-cabecera h2 {
+  margin: 0;
+}
+
+.acciones {
+  display: flex;
+  gap: 8px;
+}
+
+/* ---- CONTROLES ---- */
+
+.boton,
+select {
+  font-family: inherit;
+  font-size: 14px;
+  padding: 6px 14px;
+  border: 1px solid #000;
+  border-radius: 6px;
+  background: #fff;
+  color: #000;
+  cursor: pointer;
+}
+
+.boton {
+  background: #1f5fa8;
+  border-color: #1f5fa8;
+  color: #fff;
+}
+
+.boton:hover {
+  background: #174c88;
+}
+
+.boton.secundario {
+  background: #fff;
+  border-color: #000;
+  color: #000;
+}
+
+.boton.secundario:hover {
+  background: #eee;
+}
+
+/* ---- EDITOR ---- */
+
+.editor {
+  display: flex;
+  border: 1px solid #000;
+  border-radius: 6px;
+  height: 340px;
+  overflow: hidden;
+}
+
+.numeros {
+  width: 46px;
+  padding: 10px 8px 10px 0;
+  border-right: 1px solid #000;
+  font-family: 'Roboto Mono', Consolas, monospace;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: right;
+  overflow: hidden;
+  user-select: none;
+}
+
+.numeros .linea-error {
+  color: #c00;
+  font-weight: bold;
+}
+
+.editor textarea {
+  flex: 1;
+  border: none;
+  outline: none;
+  resize: none;
+  padding: 10px 12px;
+  font-family: 'Roboto Mono', Consolas, monospace;
+  font-size: 14px;
+  line-height: 22px;
+  white-space: pre;
+  overflow: auto;
+}
+
+.nota {
+  margin: 10px 0 0;
+  font-size: 13px;
+}
+
+code,
+kbd {
+  font-family: 'Roboto Mono', Consolas, monospace;
+  font-size: 12px;
+}
+
+/* ---- RESULTADO ---- */
+
+.mensaje-vacio {
+  margin: 0;
+  font-size: 14px;
+}
+
+.linea-resultado {
+  font-family: 'Roboto Mono', Consolas, monospace;
+  font-size: 14px;
+}
+
+.linea-resultado.error {
+  color: #c00;
+}
+
+.detalle {
+  margin: 8px 0 0;
+  font-size: 13px;
+}
+
+/* ---- TABLA DE CÓDIGOS ---- */
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.tabla th,
+.tabla td {
+  border: 1px solid #000;
+  padding: 5px 8px;
+  text-align: left;
+}
+
+/* ---- PIE DE PÁGINA ---- */
+
+.pie {
+  padding: 16px 0 26px;
+  font-size: 13px;
+}
+
+/* ---- DISEÑO RESPONSIVO ---- */
+
+@media (max-width: 900px) {
+  .columnas {
+    grid-template-columns: 1fr;
+  }
+}

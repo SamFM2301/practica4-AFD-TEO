@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parser EXAR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&family=Roboto+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+  <body>
+    <!-- ---- ENCABEZADO ---- -->
+    <header class="encabezado">
+      <div class="contenedor">
+        <h1>Parser EXAR</h1>
+        <p>Teoría de la Computación &middot; Unidad 4: Análisis Sintáctico</p>
+      </div>
+    </header>
+
+    <main class="contenedor">
+      <div class="columnas">
+        <!-- ---- MÓDULO DE ENTRADA ---- -->
+        <section class="panel">
+          <div class="panel-cabecera">
+            <h2>Sentencias</h2>
+            <div class="acciones">
+              <select id="ejemplos">
+                <option value="">Cargar ejemplo...</option>
+                <option value="0">5.3.1 Sin error</option>
+                <option value="1">5.3.2 Símbolo desconocido</option>
+                <option value="2">5.3.3 Elemento inválido</option>
+                <option value="3">5.3.4 Falta delimitador</option>
+                <option value="4">5.3.5 Falta operador</option>
+                <option value="5">5.3.6 Falta identificador / constante</option>
+                <option value="6">5.3.7 Falta identificador / constante</option>
+              </select>
+              <button id="btnLimpiar" class="boton secundario" type="button">
+                Limpiar
+              </button>
+              <button id="btnAnalizar" class="boton" type="button">
+                Analizar
+              </button>
+            </div>
+          </div>
+
+          <div class="editor">
+            <div id="numeros" class="numeros"></div>
+            <textarea
+              id="entrada"
+              spellcheck="false"
+              wrap="off"
+              placeholder="(X1+B2);"
+            ></textarea>
+          </div>
+        </section>
+
+        <div class="lateral">
+          <!-- ---- MÓDULO DE RESULTADOS ---- -->
+          <section class="panel">
+            <h2>Resultado</h2>
+            <div id="resultado" class="resultado">
+              <p class="mensaje-vacio">
+                Escribe las sentencias y presiona Analizar.
+              </p>
+            </div>
+          </section>
+
+          <!-- ---- CÓDIGOS DE ERROR ---- -->
+          <section class="panel">
+            <h2>Códigos de error</h2>
+            <table class="tabla">
+              <thead>
+                <tr>
+                  <th>Tipo</th>
+                  <th>Código</th>
+                  <th>Descripción</th>
+                </tr>
+              </thead>
+              <tbody id="tablaCodigos"></tbody>
+            </table>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- ---- PIE DE PÁGINA ---- -->
+    <footer class="pie">
+      <div class="contenedor">
+        Equipo: Jose Isaac Camacho Vazquez &middot;Jorge Alejandro Mercado
+        Guzmán &middot; Esteban Samuel Frias Martinez
+      </div>
+    </footer>
+
+    <!-- ---- SCRIPTS ---- -->
+    <script src="js/errores.js"></script>
+    <script src="js/entrada.js"></script>
+    <script src="js/analisis.js"></script>
+    <script src="js/resultados.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
