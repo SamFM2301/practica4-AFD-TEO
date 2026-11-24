@@ -59,24 +59,17 @@ function analizar() {
     return
   }
 
-  var simbolosPorLinea = []
-
+  // Cada sentencia se revisa completa (léxico y luego el autómata de pila)
+  // antes de pasar a la siguiente, así se señala el primer error del texto.
   for (var i = 0; i < lineas.length; i++) {
     if (lineaVacia(lineas[i])) continue
 
     var lexico = analizarLexico(lineas[i], i + 1)
-    if (lexico.error !== null) {
-      mostrarError(lexico.error)
-      actualizarNumeros(lexico.error.linea)
-      return
+    var error = lexico.error
+    if (error === null) {
+      error = automataPila(lexico.simbolos, i + 1)
     }
-    simbolosPorLinea[i] = lexico.simbolos
-  }
 
-  for (var k = 0; k < lineas.length; k++) {
-    if (lineaVacia(lineas[k])) continue
-
-    var error = automataPila(simbolosPorLinea[k], k + 1)
     if (error !== null) {
       mostrarError(error)
       actualizarNumeros(error.linea)
